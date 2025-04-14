@@ -5,13 +5,15 @@ import axios from 'axios';
 
 
 function Form() {
-    useEffect(() =>{
+    const [estados, setEstados] = useState([]);
+    useEffect(() => {
         axios.get('http://servicodados.ibge.gov.br/api/v1/localidades/estados')
-            .then(response=>{
+            .then(response => {
                 console.log(response.data);
             })
-    },[]);
+    }, []);
     return (
+
         <div>
             <Header title="React Form" />
             <form>
@@ -33,9 +35,10 @@ function Form() {
                     </div>
 
                     <div>
-                        <label>UF:
-                            <select name="cmbUF" id="cmbUF" >
+                        <label>uf:
+                            <select name="cmbUF" >
                                 <option value="0">Selecione uma opção</option>
+                                {estados.map(estado => (<option key={estado.sigla} value={estado.sigla}>{estado.sigla}</option>))}
                             </select>
                         </label>
                     </div>
