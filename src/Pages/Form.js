@@ -1,5 +1,5 @@
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Header from '../Header';
 import axios from 'axios';
 
@@ -9,7 +9,7 @@ function Form() {
     useEffect(() => {
         axios.get('http://servicodados.ibge.gov.br/api/v1/localidades/estados')
             .then(response => {
-                console.log(response.data);
+                setEstados(response.data);
             })
     }, []);
     return (
