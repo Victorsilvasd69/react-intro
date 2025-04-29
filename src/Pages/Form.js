@@ -27,7 +27,7 @@ function Form() {
 
     const [estados, setEstados] = useState([]);
     useEffect(() => {
-        axios.get('http://servicodados.ibge.gov.br/api/v1/localidades/estados')
+        axios.get('https://servicodados.ibge.gov.br/api/v1/localidades/estados')
             .then(response => {
                 setEstados(response.data);
             })
