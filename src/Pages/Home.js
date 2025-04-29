@@ -2,6 +2,8 @@ import logo from '../logo.svg';
 import '../App.css';
 import Header from '../Header';
 import {useState} from 'react';
+import {Link} from 'react-router-dom';
+
 
 function App() {
 
@@ -14,11 +16,15 @@ function App() {
   return (
     <div className="App">
     <Header title="Header Param"/>
-      <header className="App-header"/>
+     
       
         <img src={logo} className="App-logo" alt="logo" />
 
-      <input type="button"value="Clique" onClick={increment} />
+        <p>
+        <Link to="/cadastro">Acessar cadastro</Link><br></br>
+        </p>
+
+      <p><input type="button"value="Clique" onClick={increment} /></p>
         <p>{contador}</p> cliques!
     </div>
   );
