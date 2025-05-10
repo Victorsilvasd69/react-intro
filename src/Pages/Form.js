@@ -20,10 +20,9 @@ function Form() {
     function handleFormSubmit(event) {
         event.preventDefault();
         axios.post('http://localhost:3001/cadastro', campos).then(response => {
-            alert(response.data.dados.length + ' cadastros!');
+            alert('cadastros realizado com sucesso!');
         })
     }
-
 
     const [estados, setEstados] = useState([]);
     useEffect(() => {
